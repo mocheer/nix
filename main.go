@@ -14,6 +14,8 @@ func main() {
 		Commands: []*cli.Command{
 			cmds.Serve,
 			cmds.Fs,
+			cmds.Run,
+			cmds.Exec,
 		},
 	}
 	//
