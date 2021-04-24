@@ -3,6 +3,7 @@ package cmds
 import (
 	"fmt"
 	"os/exec"
+	"regexp"
 	"strings"
 
 	"github.com/mocheer/pluto/fs"
@@ -25,7 +26,7 @@ var Run = &cli.Command{
 			scriptName := c.Args().Get(0)
 			scriptContent := conf.Scripts[scriptName]
 			if scriptContent != "" {
-				args := reg.CommandParams.FindAllString(scriptContent, 10)
+				args := regexp.MustCompile(reg.CommandParams).FindAllString(scriptContent, 10)
 				params := []string{}
 				// 命令行参数在窗口输入的时候需要带引号，但这里的参数不需要，反而要去掉
 				for _, val := range args[1:] {
