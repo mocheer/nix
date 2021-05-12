@@ -33,8 +33,9 @@ var Run = &cli.Command{
 					"appName":  conf.Name,
 					"execPath": sys.GetAbsolutePath(),
 				})
+				// 输出具体执行的内容
 				fmt.Println(scriptContent)
-
+				//
 				scriptArray := strings.Split(scriptContent, "&&")
 				for _, script := range scriptArray {
 					args := regexp.MustCompile(reg.CommandParams).FindAllString(script, 10)

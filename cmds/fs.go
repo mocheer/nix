@@ -10,10 +10,10 @@ var Fs = &cli.Command{
 	Name:  "fs",
 	Usage: "文件操作命令集",
 	Subcommands: []*cli.Command{
-		// nix fs append -d b -s "import * as cesium from 'cesium'" -suffix text
+		// nix fs append -d ./dir -s "import * as cesium from 'cesium'" -suffix text
 		{
 			Name:  "append",
-			Usage: "往文件追加内容",
+			Usage: "批量往文件追加内容",
 			Flags: []cli.Flag{
 				&cli.StringFlag{Name: "suffix"},
 				&cli.StringFlag{Name: "dir", Aliases: []string{"d"}},
@@ -23,6 +23,17 @@ var Fs = &cli.Command{
 				fs.EachDirAppendHead(c.String("d"), c.String("s"), map[string]interface{}{
 					"suffix": c.String("suffix"),
 				})
+				return nil
+			},
+		},
+		// nix fs rename -d ./dir
+		{
+			Name:  "rename",
+			Usage: "批量重命名文件",
+			Flags: []cli.Flag{
+				&cli.StringFlag{Name: "dir", Aliases: []string{"d"}},
+			},
+			Action: func(c *cli.Context) error {
 				return nil
 			},
 		},
