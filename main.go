@@ -17,6 +17,7 @@ func main() {
 			cmds.Run,
 			cmds.Exec,
 			cmds.NSSM,
+			cmds.Rsa,
 			cmds.About,
 		},
 	}

@@ -2,10 +2,10 @@ package cmds
 
 import (
 	"fmt"
-	"os/exec"
 	"regexp"
 	"strings"
 
+	"github.com/mocheer/pluto/cmd"
 	"github.com/mocheer/pluto/fn"
 	"github.com/mocheer/pluto/fs"
 	"github.com/mocheer/pluto/reg"
@@ -38,14 +38,21 @@ var Run = &cli.Command{
 				//
 				scriptArray := strings.Split(scriptContent, "&&")
 				for _, script := range scriptArray {
+					// 空格分割
 					args := regexp.MustCompile(reg.CommandParams).FindAllString(script, 10)
+					// 参数集合
 					params := []string{}
+					name := args[0]
+					switch name {
+					case "nssm":
+						args = append([]string{"nix"}, args...)
+					}
 					// 命令行参数在窗口输入的时候需要带引号，但这里的参数不需要，反而要去掉
 					for _, val := range args[1:] {
 						params = append(params, strings.ReplaceAll(val, `"`, ``))
 					}
-					command := exec.Command(args[0], params...)
-					err := command.Run()
+
+					err := cmd.Exec(args[0], params...)
 					if err != nil {
 						fmt.Println(err)
 					}
