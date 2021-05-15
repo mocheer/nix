@@ -5,11 +5,11 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/mocheer/pluto/cmd"
 	"github.com/mocheer/pluto/fn"
 	"github.com/mocheer/pluto/fs"
 	"github.com/mocheer/pluto/reg"
 	"github.com/mocheer/pluto/sys"
+	"github.com/mocheer/pluto/sys/cmd"
 	"github.com/urfave/cli/v2"
 )
 
