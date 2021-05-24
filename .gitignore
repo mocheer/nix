@@ -12,4 +12,5 @@ data
 log
 
 .nix/
-!nssm.exe
+
+!cmds/tools/*.exe
