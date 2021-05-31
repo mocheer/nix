@@ -52,7 +52,7 @@ var Run = &cli.Command{
 						params = append(params, strings.ReplaceAll(val, `"`, ``))
 					}
 
-					err := cmd.Exec(args[0], params...)
+					err := sys.Exec(args[0], params...)
 					if err != nil {
 						fmt.Println(err)
 					}

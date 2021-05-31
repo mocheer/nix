@@ -26,7 +26,7 @@ var NSSM = &cli.Command{
 		if !isExist {
 			fs.SaveFile(nssmExePath, nssmBytes)
 		}
-		cmd.Exec(nssmExePath, c.Args().Slice()...)
+		sys.Exec(nssmExePath, c.Args().Slice()...)
 		return nil
 	},
 }
