@@ -6,7 +6,7 @@ import (
 
 	"github.com/mocheer/nix/global"
 	"github.com/mocheer/pluto/fs"
-	"github.com/mocheer/pluto/sys/cmd"
+	"github.com/mocheer/pluto/sys"
 	"github.com/urfave/cli/v2"
 )
 

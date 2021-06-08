@@ -9,7 +9,7 @@ import (
 	"github.com/mocheer/pluto/fs"
 	"github.com/mocheer/pluto/reg"
 	"github.com/mocheer/pluto/sys"
-	"github.com/mocheer/pluto/sys/cmd"
+	"github.com/mocheer/pluto/ts"
 	"github.com/urfave/cli/v2"
 )
 
@@ -29,13 +29,13 @@ var Run = &cli.Command{
 			scriptName := c.Args().Get(0)
 			scriptContent := conf.Scripts[scriptName]
 			if scriptContent != "" {
-				scriptContent = fn.FmtString(scriptContent, map[string]interface{}{
+				scriptContent = fn.FmtString(scriptContent, ts.Map{
 					"appName":  conf.Name,
 					"execPath": sys.GetAbsolutePath(),
 				})
 				// 输出具体执行的内容
 				fmt.Println(scriptContent)
-				//
+				// 多个脚本命令
 				scriptArray := strings.Split(scriptContent, "&&")
 				for _, script := range scriptArray {
 					// 空格分割
@@ -51,7 +51,7 @@ var Run = &cli.Command{
 					for _, val := range args[1:] {
 						params = append(params, strings.ReplaceAll(val, `"`, ``))
 					}
-
+					//
 					err := sys.Exec(args[0], params...)
 					if err != nil {
 						fmt.Println(err)
