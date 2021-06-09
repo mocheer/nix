@@ -4,11 +4,11 @@ import (
 	"path"
 
 	"github.com/mocheer/nix/global"
-	"github.com/mocheer/pluto/ecc"
+	"github.com/mocheer/pluto/ec"
 	"github.com/urfave/cli/v2"
 )
 
-//
+// nix rsa 生成密钥文件
 var Rsa = &cli.Command{
 	Name:  "rsa",
 	Usage: "生成rsa文件",
@@ -17,7 +17,7 @@ var Rsa = &cli.Command{
 		if dir == "" {
 			dir = path.Join(global.ExportDir, "rsa")
 		}
-		ecc.RSA_GenPemFiles(dir, 2048)
+		ec.RSA_GenPemFiles(dir, 2048)
 		return nil
 	},
 }

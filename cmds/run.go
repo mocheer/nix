@@ -7,7 +7,6 @@ import (
 
 	"github.com/mocheer/pluto/fn"
 	"github.com/mocheer/pluto/fs"
-	"github.com/mocheer/pluto/reg"
 	"github.com/mocheer/pluto/sys"
 	"github.com/mocheer/pluto/ts"
 	"github.com/urfave/cli/v2"
@@ -39,7 +38,8 @@ var Run = &cli.Command{
 				scriptArray := strings.Split(scriptContent, "&&")
 				for _, script := range scriptArray {
 					// 空格分割
-					args := regexp.MustCompile(reg.CommandParams).FindAllString(script, 10)
+					// 匹配命令行参数，用于按空格分割（不包括引号内的空格）
+					args := regexp.MustCompile(`"([^"]*?)"|(\S+)`).FindAllString(script, 10)
 					// 参数集合
 					params := []string{}
 					name := args[0]
