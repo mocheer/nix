@@ -30,7 +30,7 @@ var Run = &cli.Command{
 			if scriptContent != "" {
 				scriptContent = fn.FmtString(scriptContent, ts.Map{
 					"appName":  conf.Name,
-					"execPath": sys.GetAbsolutePath(),
+					"execPath": sys.GetCurrentPath(),
 				})
 				// 输出具体执行的内容
 				fmt.Println(scriptContent)

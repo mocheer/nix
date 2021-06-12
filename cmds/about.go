@@ -13,7 +13,7 @@ var About = &cli.Command{
 	Name:  "about",
 	Usage: "相关信息",
 	Action: func(c *cli.Context) error {
-		exePath, _ := sys.GetCurrentPath()
+		exePath, _ := sys.GetExePath()
 		execPath, _ := os.Getwd()
 		fmt.Printf(`
 %c[1;31;40m---关于---%c[0m

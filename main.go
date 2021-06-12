@@ -18,6 +18,7 @@ func main() {
 			cmds.Exec,
 			cmds.NSSM,
 			cmds.Rsa,
+			cmds.Dev,
 			cmds.Build,
 			cmds.About,
 		},
