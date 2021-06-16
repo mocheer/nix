@@ -1,8 +1,7 @@
 package cmds
 
 import (
-	"fmt"
-
+	"github.com/mocheer/pluto/ts/clock"
 	"github.com/mocheer/pluto/ts/tileset"
 	"github.com/urfave/cli/v2"
 )
@@ -16,9 +15,8 @@ var Tileset = &cli.Command{
 		url := args.Get(0)
 		name := args.Get(1)
 		if name == "" {
-			name = "3dtiles"
+			name = "data/3dtiles-" + clock.Now().Fmt(clock.FmtCompactFullDate)
 		}
-		fmt.Println(url)
 		tileset.Load(url, name)
 		return nil
 	},
