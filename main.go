@@ -12,6 +12,8 @@ func main() {
 	//
 	app := &cli.App{
 		Commands: []*cli.Command{
+			cmds.Dev,
+			cmds.Build,
 			cmds.Serve,
 			cmds.Fs,
 			cmds.Run,
@@ -19,8 +21,7 @@ func main() {
 			cmds.NSSM,
 			cmds.Rsa,
 			cmds.Tileset,
-			cmds.Dev,
-			cmds.Build,
+			cmds.Struct,
 			cmds.About,
 		},
 	}

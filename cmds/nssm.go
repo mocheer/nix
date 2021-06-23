@@ -24,7 +24,7 @@ var NSSM = &cli.Command{
 		nssmExePath := path.Join(global.ExportDir, "nssm.exe")
 		isExist := fs.IsExist(nssmExePath)
 		if !isExist {
-			fs.SaveFile(nssmExePath, nssmBytes)
+			fs.Save(nssmExePath, nssmBytes)
 		}
 		sys.Exec(nssmExePath, c.Args().Slice()...)
 		return nil
