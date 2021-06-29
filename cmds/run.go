@@ -2,8 +2,6 @@ package cmds
 
 import (
 	"fmt"
-	"regexp"
-	"strings"
 
 	"github.com/mocheer/pluto/fn"
 	"github.com/mocheer/pluto/fs"
@@ -33,31 +31,8 @@ var Run = &cli.Command{
 					"execPath": sys.GetCurrentPath(),
 				})
 				// 输出具体执行的内容
-				fmt.Println(scriptContent)
-				// 多个脚本命令
-				scriptArray := strings.Split(scriptContent, "&&")
-				for _, script := range scriptArray {
-					// 空格分割
-					// 匹配命令行参数，用于按空格分割（不包括引号内的空格）
-					args := regexp.MustCompile(`"([^"]*?)"|(\S+)`).FindAllString(script, 10)
-					// 参数集合
-					params := []string{}
-					name := args[0]
-					switch name {
-					case "nssm":
-						args = append([]string{"nix"}, args...)
-					}
-					// 命令行参数在窗口输入的时候需要带引号，但这里的参数不需要，反而要去掉
-					for _, val := range args[1:] {
-						params = append(params, strings.ReplaceAll(val, `"`, ``))
-					}
-					//
-					err := sys.Exec(args[0], params...)
-					if err != nil {
-						fmt.Println(err)
-					}
-				}
-
+				fmt.Println("Powershell >", scriptContent)
+				sys.Shell(scriptContent)
 			}
 		}
 		return nil

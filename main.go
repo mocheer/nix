@@ -19,6 +19,7 @@ func main() {
 			cmds.Run,
 			cmds.Exec,
 			cmds.NSSM,
+			cmds.Scoop,
 			cmds.Rsa,
 			cmds.Tileset,
 			cmds.Struct,
