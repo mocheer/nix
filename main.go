@@ -19,6 +19,8 @@ func main() {
 			cmds.Run,
 			cmds.Exec,
 			cmds.NSSM,
+			cmds.Upx,
+			cmds.GeoTiff,
 			cmds.Scoop,
 			cmds.Rsa,
 			cmds.Tileset,

@@ -13,4 +13,4 @@ log
 
 .nix/
 
-!cmds/tools/*.exe
+!cmds/tools/**/*.exe

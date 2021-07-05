@@ -1,5 +1,7 @@
 {
   "scripts":{
-    "build":"go build -ldflags \"-s -w\""
+    "build":"go build -ldflags \"-s -w\"",
+    "upx":"nix upx -9 nix.exe",
+    "build-upx":"nix build;nix run upx"
   }
 }
