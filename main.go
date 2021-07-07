@@ -20,7 +20,7 @@ func main() {
 			cmds.Exec,
 			cmds.NSSM,
 			cmds.Upx,
-			cmds.GeoTiff,
+			cmds.Tif,
 			cmds.Scoop,
 			cmds.Rsa,
 			cmds.Tileset,
