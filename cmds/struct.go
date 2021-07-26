@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"fmt"
 
+	"github.com/mocheer/pluto/ds/dsjson"
 	"github.com/mocheer/pluto/fn"
-	"github.com/mocheer/pluto/fs"
 	"github.com/mocheer/pluto/ts"
 	"github.com/urfave/cli/v2"
 	"gorm.io/driver/postgres"
@@ -45,11 +45,11 @@ var Struct = &cli.Command{
 }
 
 func openDB() (db *gorm.DB, err error) {
-	data, err := fs.ReadJSONToMap("./assets/config/app.json")
+	data := dsjson.ReadGJSON("./assets/config/app.json")
 	if err != nil {
 		return nil, err
 	}
-	db, err = gorm.Open(postgres.Open(data["DSN"].(string)), &gorm.Config{
+	db, err = gorm.Open(postgres.Open(data.Get("DSN").String()), &gorm.Config{
 		AllowGlobalUpdate: false,
 		Logger:            logger.Default.LogMode(logger.Silent),
 	})

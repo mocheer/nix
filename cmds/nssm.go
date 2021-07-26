@@ -5,7 +5,7 @@ import (
 	"path"
 
 	"github.com/mocheer/nix/global"
-	"github.com/mocheer/pluto/fs"
+	"github.com/mocheer/pluto/ds"
 	"github.com/mocheer/pluto/sys"
 	"github.com/urfave/cli/v2"
 )
@@ -22,9 +22,9 @@ var NSSM = &cli.Command{
 	Usage: "执行nssm.exe注册windows服务",
 	Action: func(c *cli.Context) error {
 		nssmExePath := path.Join(global.ExportDir, "nssm.exe")
-		isExist := fs.IsExist(nssmExePath)
+		isExist := ds.IsExist(nssmExePath)
 		if !isExist {
-			fs.Save(nssmExePath, nssmBytes)
+			ds.Save(nssmExePath, nssmBytes)
 		}
 		sys.Exec(nssmExePath, c.Args().Slice()...)
 		return nil

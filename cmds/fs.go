@@ -1,7 +1,7 @@
 package cmds
 
 import (
-	"github.com/mocheer/pluto/fs"
+	"github.com/mocheer/pluto/ds"
 	"github.com/urfave/cli/v2"
 )
 
@@ -20,7 +20,7 @@ var Fs = &cli.Command{
 				&cli.StringFlag{Name: "start", Aliases: []string{"s"}},
 			},
 			Action: func(c *cli.Context) error {
-				fs.EachFilesAppendHead(c.String("d"), c.String("s"), map[string]interface{}{
+				ds.EachFilesAppendHead(c.String("d"), c.String("s"), map[string]interface{}{
 					"suffix": c.String("suffix"),
 				})
 				return nil

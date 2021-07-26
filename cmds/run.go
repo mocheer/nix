@@ -3,8 +3,8 @@ package cmds
 import (
 	"fmt"
 
+	"github.com/mocheer/pluto/ds/dsjson"
 	"github.com/mocheer/pluto/fn"
-	"github.com/mocheer/pluto/fs"
 	"github.com/mocheer/pluto/sys"
 	"github.com/mocheer/pluto/ts"
 	"github.com/urfave/cli/v2"
@@ -21,7 +21,7 @@ var Run = &cli.Command{
 	Usage: "执行脚本",
 	Action: func(c *cli.Context) error {
 		var conf Config
-		err := fs.ReadJSON("./nix.json", &conf)
+		err := dsjson.Read("./nix.json", &conf)
 		if err == nil {
 			scriptName := c.Args().Get(0)
 			scriptContent := conf.Scripts[scriptName]

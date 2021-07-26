@@ -5,7 +5,7 @@ import (
 	"path"
 
 	"github.com/mocheer/nix/global"
-	"github.com/mocheer/pluto/fs"
+	"github.com/mocheer/pluto/ds"
 	"github.com/mocheer/pluto/sys"
 	"github.com/urfave/cli/v2"
 )
@@ -21,9 +21,9 @@ var Upx = &cli.Command{
 	SkipFlagParsing: true,
 	Action: func(c *cli.Context) error {
 		upxExePath := path.Join(global.ExportDir, "upx.exe")
-		isExist := fs.IsExist(upxExePath)
+		isExist := ds.IsExist(upxExePath)
 		if !isExist {
-			fs.Save(upxExePath, upxBytes)
+			ds.Save(upxExePath, upxBytes)
 		}
 		sys.Exec(upxExePath, c.Args().Slice()...)
 		return nil
