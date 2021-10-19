@@ -23,6 +23,7 @@ func main() {
 			cmds.Tif,
 			cmds.Scoop,
 			cmds.Rsa,
+			cmds.Tile,
 			cmds.Tileset,
 			cmds.Struct,
 			cmds.About,
