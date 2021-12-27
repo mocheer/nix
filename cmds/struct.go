@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/mocheer/pluto/ds/dsjson"
+	"github.com/mocheer/pluto/ds/ds_json"
 	"github.com/mocheer/pluto/fn"
 	"github.com/mocheer/pluto/ts"
 	"github.com/urfave/cli/v2"
@@ -45,7 +45,7 @@ var Struct = &cli.Command{
 }
 
 func openDB() (db *gorm.DB, err error) {
-	data := dsjson.ReadGJSON("./assets/config/app.json")
+	data := ds_json.ReadGJSON("./assets/config/app.json")
 	if err != nil {
 		return nil, err
 	}

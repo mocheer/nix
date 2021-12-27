@@ -8,6 +8,7 @@ import (
 )
 
 // Serve : nix serve
+// nix serve -p=9912
 var Serve = &cli.Command{
 	Name:  "serve",
 	Usage: "启动一个简易的web服务器",

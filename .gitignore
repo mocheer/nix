@@ -14,3 +14,7 @@ log
 .nix/
 
 !cmds/tools/**/*.exe
+
+# git-ssh
+id_rsa
+id_rsa.pub
