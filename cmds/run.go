@@ -10,17 +10,12 @@ import (
 	"github.com/urfave/cli/v2"
 )
 
-type Config struct {
-	Name    string
-	Scripts map[string]string
-}
-
 // Run
 var Run = &cli.Command{
 	Name:  "run",
 	Usage: "执行脚本",
 	Action: func(c *cli.Context) error {
-		var conf Config
+		var conf NixJSONConfig
 		err := ds_json.Read("./nix.json", &conf)
 		if err == nil {
 			scriptName := c.Args().Get(0)
@@ -28,11 +23,21 @@ var Run = &cli.Command{
 			if scriptContent != "" {
 				scriptContent = fn.FmtString(scriptContent, ts.Map{
 					"appName":  conf.Name,
+					"name":     conf.Name,
+					"version":  conf.Version,
 					"execPath": sys.GetCurrentPath(),
 				})
 				// 输出具体执行的内容
 				fmt.Println("Powershell >", scriptContent)
 				sys.Shell(scriptContent)
+
+				// hooks
+				postScriptContent := conf.Scripts[scriptName+"-post"]
+				if postScriptContent != "" {
+					sys.Shell(postScriptContent)
+					fmt.Println("Powershell >", scriptContent)
+				}
+
 			}
 		}
 		return nil

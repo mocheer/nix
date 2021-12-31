@@ -20,7 +20,7 @@ var Fs = &cli.Command{
 				&cli.StringFlag{Name: "start", Aliases: []string{"s"}},
 			},
 			Action: func(c *cli.Context) error {
-				ds.EachFilesAppendHead(c.String("d"), c.String("s"), map[string]interface{}{
+				ds.EachFilesToAppendHead(c.String("d"), c.String("s"), map[string]interface{}{
 					"suffix": c.String("suffix"),
 				})
 				return nil

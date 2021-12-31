@@ -17,6 +17,7 @@ func main() {
 			cmds.Serve,
 			cmds.Fs,
 			cmds.Run,
+			cmds.Version,
 			cmds.Exec,
 			cmds.NSSM,
 			cmds.Upx,
@@ -27,6 +28,7 @@ func main() {
 			cmds.Tileset,
 			cmds.Struct,
 			cmds.About,
+			cmds.NixJSON,
 		},
 	}
 	//
