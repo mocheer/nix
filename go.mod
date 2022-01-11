@@ -1,17 +1,9 @@
-module github.com/mocheer/nix
+module gopls-workspace
 
-go 1.16
+go 1.17
 
-require (
-	github.com/mocheer/pluto v1.0.0
-	github.com/mocheer/xena v0.0.0-20210813111416-12a844dd8fc7
-	github.com/urfave/cli/v2 v2.3.0
-	gorm.io/driver/postgres v1.1.0
-	gorm.io/gorm v1.21.11
-)
+require github.com/mocheer/vesta v1.9999999.0-goplsworkspace
 
-replace (
-	github.com/mocheer/pluto => ../pluto
-	github.com/mocheer/vesta => ../vesta
-	github.com/mocheer/xena => ../xena
-)
+replace github.com/mocheer/vesta => D:\code-space\go\vesta
+
+replace github.com/mocheer/pluto => D:\code-space\go\pluto

@@ -3,7 +3,7 @@ package cmds
 import (
 	"fmt"
 
-	"github.com/mocheer/pluto/ds/ds_json"
+	"github.com/mocheer/pluto/ds/ds_text"
 	"github.com/urfave/cli/v2"
 )
 
@@ -18,10 +18,9 @@ var NixJSON = &cli.Command{
 	Name:  "nix.json",
 	Usage: "查看配置文件",
 	Action: func(c *cli.Context) error {
-		var conf NixJSONConfig
-		err := ds_json.Read("./nix.json", &conf)
+		data, err := ds_text.Read("./nix.json")
 		if err == nil {
-			fmt.Printf("%+v", conf)
+			fmt.Println(data)
 		}
 		return nil
 	},
