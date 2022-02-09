@@ -3,7 +3,7 @@ package cmds
 import (
 	"fmt"
 
-	"github.com/mocheer/xena/gfs/gtif"
+	"github.com/mocheer/xena/pkg/gtif"
 	"github.com/urfave/cli/v2"
 )
 

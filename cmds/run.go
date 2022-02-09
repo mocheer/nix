@@ -3,10 +3,10 @@ package cmds
 import (
 	"fmt"
 
-	"github.com/mocheer/pluto/ds/ds_json"
-	"github.com/mocheer/pluto/fn"
-	"github.com/mocheer/pluto/sys"
-	"github.com/mocheer/pluto/ts"
+	"github.com/mocheer/pluto/pkg/ds/ds_json"
+	"github.com/mocheer/pluto/pkg/fn"
+	"github.com/mocheer/pluto/pkg/sys"
+	"github.com/mocheer/pluto/pkg/ts"
 	"github.com/urfave/cli/v2"
 )
 

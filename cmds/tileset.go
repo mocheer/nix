@@ -1,8 +1,8 @@
 package cmds
 
 import (
-	"github.com/mocheer/pluto/ts/clock"
-	"github.com/mocheer/xena/gfs/tileset"
+	"github.com/mocheer/pluto/pkg/ts/clock"
+	"github.com/mocheer/xena/pkg/tileset"
 	"github.com/urfave/cli/v2"
 )
 

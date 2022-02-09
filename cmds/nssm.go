@@ -5,8 +5,8 @@ import (
 	"path"
 
 	"github.com/mocheer/nix/global"
-	"github.com/mocheer/pluto/ds"
-	"github.com/mocheer/pluto/sys"
+	"github.com/mocheer/pluto/pkg/ds"
+	"github.com/mocheer/pluto/pkg/sys"
 	"github.com/urfave/cli/v2"
 )
 

@@ -4,7 +4,7 @@ import (
 	"path"
 
 	"github.com/mocheer/nix/global"
-	"github.com/mocheer/pluto/ec"
+	"github.com/mocheer/pluto/pkg/ec"
 	"github.com/urfave/cli/v2"
 )
 

@@ -1,7 +1,7 @@
 package cmds
 
 import (
-	"github.com/mocheer/pluto/ds"
+	"github.com/mocheer/pluto/pkg/ds"
 	"github.com/urfave/cli/v2"
 )
 

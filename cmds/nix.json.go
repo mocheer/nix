@@ -3,7 +3,7 @@ package cmds
 import (
 	"fmt"
 
-	"github.com/mocheer/pluto/ds/ds_text"
+	"github.com/mocheer/pluto/pkg/ds/ds_text"
 	"github.com/urfave/cli/v2"
 )
 

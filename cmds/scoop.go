@@ -3,7 +3,7 @@ package cmds
 import (
 	_ "embed"
 
-	"github.com/mocheer/pluto/sys"
+	"github.com/mocheer/pluto/pkg/sys"
 	"github.com/urfave/cli/v2"
 )
 
