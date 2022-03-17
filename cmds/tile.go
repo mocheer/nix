@@ -7,7 +7,8 @@ import (
 )
 
 // Tile : nix tile xxx
-// nix tile http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/tile/ data/tile-dark
+// nix tile "http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/tile/{z}/{x}/{y}" data/tile-arcgis-dark
+// nix tile "https://iserver.supermap.io/iserver/services/map-china400/rest/maps/ChinaDark/zxyTileImage.png?z={z}&x={x}&y={y}" data/tile-supermap-dark
 var Tile = &cli.Command{
 	Name:  "tile",
 	Usage: "下载在线瓦片地图",
@@ -19,7 +20,6 @@ var Tile = &cli.Command{
 			name = "data/tile-" + clock.Now().Fmt(clock.FmtCompactFullDate)
 		}
 		tile.Load(url, name)
-
 		return nil
 	},
 }

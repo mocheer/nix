@@ -1,12 +1,6 @@
 module github.com/mocheer/nix
 
-go 1.17
-
-replace (
-	github.com/mocheer/pluto => ../pluto
-	github.com/mocheer/vesta => ../vesta
-	github.com/mocheer/xena => ../xena
-)
+go 1.18
 
 require (
 	github.com/go-git/go-git/v5 v5.4.2

@@ -32,7 +32,7 @@ var Run = &cli.Command{
 				sys.Shell(scriptContent)
 
 				// hooks
-				postScriptContent := conf.Scripts[scriptName+"-post"]
+				postScriptContent := conf.Scripts[scriptName+"#post"]
 				if postScriptContent != "" {
 					sys.Shell(postScriptContent)
 					fmt.Println("Powershell >", scriptContent)
