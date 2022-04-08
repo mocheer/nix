@@ -25,6 +25,7 @@ func main() {
 			cmds.Scoop,
 			cmds.Rsa,
 			cmds.Tile,
+			cmds.TileArcgis,
 			cmds.Tileset,
 			cmds.Struct,
 			cmds.About,

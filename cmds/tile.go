@@ -19,7 +19,7 @@ var Tile = &cli.Command{
 		if name == "" {
 			name = "data/tile-" + clock.Now().Fmt(clock.FmtCompactFullDate)
 		}
-		tile.Load(url, name)
+		tile.Load(url, name, 18)
 		return nil
 	},
 }
