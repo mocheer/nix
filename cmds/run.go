@@ -3,6 +3,7 @@ package cmds
 import (
 	"fmt"
 
+	"github.com/mocheer/nix/cmds/types"
 	"github.com/mocheer/pluto/pkg/ds/ds_json"
 	"github.com/mocheer/pluto/pkg/fn"
 	"github.com/mocheer/pluto/pkg/sys"
@@ -15,13 +16,13 @@ var Run = &cli.Command{
 	Name:  "run",
 	Usage: "执行脚本",
 	Action: func(c *cli.Context) error {
-		var conf NixJSONConfig
-		err := ds_json.Read("./nix.json", &conf)
+		var conf types.PackageJSON
+		err := ds_json.Read("./package.json", &conf)
 		if err == nil {
 			scriptName := c.Args().Get(0)
 			scriptContent := conf.Scripts[scriptName]
 			if scriptContent != "" {
-				scriptContent = fn.FmtString(scriptContent, ts.Map{
+				scriptContent = fn.FmtString(scriptContent, ts.Map[any]{
 					"appName":  conf.Name,
 					"name":     conf.Name,
 					"version":  conf.Version,

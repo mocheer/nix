@@ -27,9 +27,14 @@ func main() {
 			cmds.Tile,
 			cmds.TileArcgis,
 			cmds.Tileset,
+			cmds.TilesetDem,
 			cmds.Struct,
 			cmds.About,
-			cmds.NixJSON,
+			cmds.Package,
+			cmds.Esbuild,
+			cmds.Publish,
+			cmds.Install,
+			cmds.Init,
 		},
 	}
 	//

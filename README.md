@@ -1,5 +1,7 @@
 # nix
 
+personal usage
+
 - nssm
 - mingw
 - Node Media Server v3

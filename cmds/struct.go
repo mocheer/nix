@@ -56,8 +56,8 @@ func openDB() (db *gorm.DB, err error) {
 	return
 }
 
-func scanIntoMap(query *gorm.DB) []ts.Map {
-	var result []ts.Map
+func scanIntoMap(query *gorm.DB) []ts.Map[any] {
+	var result []ts.Map[any]
 	rows, err := query.Rows()
 	fmt.Println(err)
 	if err == nil {
