@@ -16,7 +16,7 @@ var Tif = &cli.Command{
 		args := c.Args()
 		fileName := args.Get(0)
 		fmt.Println(fileName)
-		t := gtif.Read(fileName)
+		t, _ := gtif.Read(fileName)
 		fmt.Println(t.Tif.IFDs())
 		return nil
 	},

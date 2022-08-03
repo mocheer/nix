@@ -10,7 +10,6 @@ var Install = &cli.Command{
 	Name:  "install",
 	Usage: "`升级安装所有依赖包",
 	Action: func(c *cli.Context) error {
-		return sys.Exec("go", "get", "-u","all")
+		return sys.Exec("go", "get", "-u")
 	},
 }
-
