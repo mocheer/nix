@@ -1,6 +1,6 @@
 module github.com/mocheer/nix
 
-go 1.18
+go 1.19
 
 require (
 	github.com/evanw/esbuild v0.14.49

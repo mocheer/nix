@@ -36,6 +36,7 @@ func main() {
 			cmds.Publish,
 			cmds.Install,
 			cmds.Init,
+			cmds.FBX2glTF,
 		},
 	}
 	//

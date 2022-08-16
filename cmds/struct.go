@@ -37,7 +37,7 @@ var Struct = &cli.Command{
 		and a.attrelid = c.oid
 		and a.atttypid = t.oid
 		and c.relname = tb.tablename 
-		order by tablename`, map[string]interface{}{"schema": "pipal"})
+		order by tablename`, map[string]any{"schema": "pipal"})
 		result := scanIntoMap(query)
 		fmt.Println(result)
 		return nil
@@ -62,7 +62,7 @@ func scanIntoMap(query *gorm.DB) []ts.Map[any] {
 	fmt.Println(err)
 	if err == nil {
 		for rows.Next() {
-			rowData := map[string]interface{}{}
+			rowData := map[string]any{}
 			err = query.ScanRows(rows, &rowData)
 			//
 			if err == nil {
@@ -72,7 +72,7 @@ func scanIntoMap(query *gorm.DB) []ts.Map[any] {
 					if columnType.DatabaseTypeName() == "JSON" {
 						name := columnType.Name()
 						if fn.IsString(rowData[name]) {
-							var data interface{}
+							var data any
 							err := json.Unmarshal([]byte(rowData[name].(string)), &data)
 							if err == nil {
 								rowData[name] = data
