@@ -8,7 +8,6 @@ import (
 	"github.com/urfave/cli/v2"
 )
 
-//
 var Init = &cli.Command{
 	Name:  "init",
 	Usage: "`初始化",
@@ -17,13 +16,13 @@ var Init = &cli.Command{
 
 		} else {
 
-			ds_json.Save("package.json", &types.PackageJSON{
+			ds_json.Save(&types.PackageJSON{
 				Name:    sys.GetCurrentDirname(),
 				Version: "1.0.0",
 				Author:  "mocheer",
 				License: "MIT",
 				Scripts: map[string]string{},
-			})
+			}, "package.json")
 		}
 		return nil
 	},

@@ -19,12 +19,13 @@ var Tile = &cli.Command{
 		if name == "" {
 			name = "data/tile-" + clock.Now().Fmt(clock.FmtCompactFullDate)
 		}
-		tile.Load(&tile.LoadConfig{
+		t := &tile.LoadConfig{
 			URL:     url,
 			DirName: name,
 			MinZoom: 0,
 			MaxZoom: 18,
-		})
+		}
+		t.LoadAndSave()
 		return nil
 	},
 }

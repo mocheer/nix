@@ -16,7 +16,9 @@ var FBX2glTF = &cli.Command{
 	Name:  "FBX2glTF",
 	Usage: "将fbx模型格式转换为gltf",
 	Action: func(c *cli.Context) error {
-		sys.MemExec(embedFBX2glTF, c.Args().Slice()...)
+		args := c.Args().Slice()
+		args = append([]string{"-b","-d"},args...)
+		sys.MemExec(embedFBX2glTF, args...)
 		return nil
 	},
 }

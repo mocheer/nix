@@ -10,6 +10,7 @@ import (
 
 // Tileset : nix tileset xxx/tileset.json
 // nix tileset  http//122.112.175.6:8103/3dtile/tileset.json
+// nix tileset https://www.thingjs.com/static/tilesData/tileset.json
 var Tileset = &cli.Command{
 	Name:  "tileset",
 	Usage: "下载在线3dtiles模型数据",

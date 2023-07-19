@@ -22,7 +22,7 @@ var Run = &cli.Command{
 			scriptName := c.Args().Get(0)
 			scriptContent := conf.Scripts[scriptName]
 			if scriptContent != "" {
-				scriptContent = fn.FmtString(scriptContent, ts.Map[any]{
+				scriptContent = fn.FormatString(scriptContent, ts.Map[any]{
 					"appName":  conf.Name,
 					"name":     conf.Name,
 					"version":  conf.Version,

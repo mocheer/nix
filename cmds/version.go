@@ -11,7 +11,6 @@ import (
 	"github.com/mocheer/nix/cmds/types"
 )
 
-//
 var Version = &cli.Command{
 	Name:  "version",
 	Usage: "修改版本号",
@@ -24,7 +23,7 @@ var Version = &cli.Command{
 			pathchVersionInt := fn.ParseInt(pathchVersion) + 1
 			versions[len(versions)-1] = strconv.Itoa(pathchVersionInt)
 			conf.Version = strings.Join(versions, ".")
-			ds_json.Save("./package.json", conf)
+			ds_json.Save(conf, "./package.json")
 		}
 		return nil
 	},
