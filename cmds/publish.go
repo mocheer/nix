@@ -16,7 +16,7 @@ var Publish = &cli.Command{
 	Usage: "发布tag版本",
 	Action: func(c *cli.Context) error {
 		var conf types.PackageJSON
-		err := ds_json.Read("./package.json", &conf)
+		err := ds_json.ReadFile("./package.json", &conf)
 		if err == nil {
 			sys.Exec("git", "tag", fmt.Sprintf("v%s", conf.Version))
 			sys.Exec("git", "push", "--tags")

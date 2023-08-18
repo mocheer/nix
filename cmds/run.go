@@ -17,12 +17,12 @@ var Run = &cli.Command{
 	Usage: "执行脚本",
 	Action: func(c *cli.Context) error {
 		var conf types.PackageJSON
-		err := ds_json.Read("./package.json", &conf)
+		err := ds_json.ReadFile("./package.json", &conf)
 		if err == nil {
 			scriptName := c.Args().Get(0)
 			scriptContent := conf.Scripts[scriptName]
 			if scriptContent != "" {
-				scriptContent = fn.FormatString(scriptContent, ts.Map[any]{
+				scriptContent = fn.Format(scriptContent, ts.Map[any]{
 					"appName":  conf.Name,
 					"name":     conf.Name,
 					"version":  conf.Version,

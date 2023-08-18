@@ -5,8 +5,8 @@ import (
 	"fmt"
 
 	"github.com/mocheer/pluto/pkg/ds/ds_json"
-	"github.com/mocheer/pluto/pkg/fn"
 	"github.com/mocheer/pluto/pkg/ts"
+	"github.com/mocheer/pluto/pkg/ts/object"
 	"github.com/urfave/cli/v2"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -71,7 +71,7 @@ func scanIntoMap(query *gorm.DB) []ts.Map[any] {
 					// gorm-postgresql 底层的 DataType 并没有识别JSON，然后转成[]byte，而是用的string
 					if columnType.DatabaseTypeName() == "JSON" {
 						name := columnType.Name()
-						if fn.IsString(rowData[name]) {
+						if object.IsString(rowData[name]) {
 							var data any
 							err := json.Unmarshal([]byte(rowData[name].(string)), &data)
 							if err == nil {

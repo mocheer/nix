@@ -12,7 +12,7 @@ var Package = &cli.Command{
 	Name:  "package",
 	Usage: "查看配置文件",
 	Action: func(c *cli.Context) error {
-		data, err := ds_text.Read("./package.json")
+		data, err := ds_text.ReadFile("./package.json")
 		if err == nil {
 			fmt.Println(data)
 		}

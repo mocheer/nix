@@ -16,7 +16,7 @@ var Version = &cli.Command{
 	Usage: "修改版本号",
 	Action: func(c *cli.Context) error {
 		var conf types.PackageJSON
-		err := ds_json.Read("./package.json", &conf)
+		err := ds_json.ReadFile("./package.json", &conf)
 		if err == nil {
 			versions := strings.Split(conf.Version, ".")
 			pathchVersion := versions[len(versions)-1]

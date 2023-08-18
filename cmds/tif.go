@@ -3,7 +3,7 @@ package cmds
 import (
 	"fmt"
 
-	"github.com/mocheer/xena/pkg/gtif"
+	"github.com/mocheer/pluto/pkg/ds/ds_tif"
 	"github.com/urfave/cli/v2"
 )
 
@@ -16,7 +16,7 @@ var Tif = &cli.Command{
 		args := c.Args()
 		fileName := args.Get(0)
 		fmt.Println(fileName)
-		t, _ := gtif.Read(fileName)
+		t, _ := ds_tif.Read(fileName)
 		fmt.Println(t.Tif.IFDs())
 		return nil
 	},
