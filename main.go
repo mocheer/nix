@@ -37,6 +37,8 @@ func main() {
 			cmds.Install,
 			cmds.Init,
 			cmds.FBX2glTF,
+			cmds.IP,
+			cmds.Basis,
 		},
 	}
 	//

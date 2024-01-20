@@ -95,6 +95,8 @@ github.com/matoous/go-nanoid/v2 v2.0.0 h1:d19kur2QuLeHmJBkvYkFdhFBzLoo1XVm2GgTpL
 github.com/matoous/go-nanoid/v2 v2.0.0/go.mod h1:FtS4aGPVfEkxKxhdWPAspZpZSh1cOjtM7Ej/So3hR0g=
 github.com/matryer/is v1.2.0 h1:92UTHpy8CDwaJ08GqLDzhhuixiBUUD1p3AU6PHddz4A=
 github.com/matryer/is v1.2.0/go.mod h1:2fLPjFQM9rhQ15aVEtbuwhJinnOqrmgXPNdZsdwlWXA=
+github.com/mocheer/ceres v1.0.1 h1:FGkIn6pv0jFT7H0ePEKFa/p9Emj95YtYh7keU9uhtm4=
+github.com/mocheer/ceres v1.0.1/go.mod h1:Op6mz//j6lD0OASbVYeh7Zmyc26GywXMYpxWBB9B6dw=
 github.com/mocheer/pluto v1.1.8 h1:e4N1u8rF4nPasRpp6v1VlrplyqOXTJ3v14zjc5kFRxg=
 github.com/mocheer/pluto v1.1.8/go.mod h1:vVmiuerCNkfBj0IDhO0REpNMFp+VDCPweS2tUn4d/3w=
 github.com/mocheer/xena v1.0.6 h1:EQk/m9yJkD/e8EHpSrW6tXsW7aqa1CUUTdphJLqAnJg=

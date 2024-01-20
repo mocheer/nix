@@ -18,7 +18,7 @@ var Basis = &cli.Command{
 	Action: func(c *cli.Context) error {
 		// ktx2 使用ktx2，内置纹理格式减少加载量
 		// comp_level 压缩等级
-		var args = []string{"-ktx2", "-comp_level 3"}
+		var args = []string{"-ktx2"}
 		args = append(args, c.Args().Slice()...)
 		sys.MemExec(embedBasisu, args...)
 		return nil
