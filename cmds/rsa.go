@@ -4,7 +4,8 @@ import (
 	"path"
 
 	"github.com/mocheer/nix/global"
-	"github.com/mocheer/pluto/pkg/ec"
+	"github.com/mocheer/pluto/pkg/ec/ec_rsa"
+
 	"github.com/urfave/cli/v2"
 )
 
@@ -17,7 +18,7 @@ var Rsa = &cli.Command{
 		if dir == "" {
 			dir = path.Join(global.ExportDir, "rsa")
 		}
-		ec.RSA_GenPemFiles(dir, 2048)
+		ec_rsa.GenPemFiles(dir, 2048)
 		return nil
 	},
 }

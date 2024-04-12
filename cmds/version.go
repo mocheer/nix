@@ -23,7 +23,7 @@ var Version = &cli.Command{
 			pathchVersionInt := fn.ParseInt(pathchVersion) + 1
 			versions[len(versions)-1] = strconv.Itoa(pathchVersionInt)
 			conf.Version = strings.Join(versions, ".")
-			ds_json.Save(conf, "./package.json")
+			ds_json.Save("./package.json", conf)
 		}
 		return nil
 	},

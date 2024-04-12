@@ -12,6 +12,7 @@ import (
 // nix tileset  http//122.112.175.6:8103/3dtile/tileset.json
 // nix tileset https://www.thingjs.com/static/tilesData/tileset.json
 // nix tileset https://tile.googleapis.com/v1/3dtiles/root.json?key=AIzaSyCnRPXWDIj1LuX6OWIweIqZFHHoXVgdYss googlephotorealistic3dtileset
+// nix tileset http://data1.mars3d.cn/3dtiles/qx-hfdxy/tileset.json mars3d_video3d
 var Tileset = &cli.Command{
 	Name:  "tileset",
 	Usage: "下载在线3dtiles模型数据",

@@ -12,6 +12,7 @@ func main() {
 	//
 	app := &cli.App{
 		Commands: []*cli.Command{
+			cmds.Active,
 			cmds.Dev,
 			cmds.Build,
 			cmds.Serve,
