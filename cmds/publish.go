@@ -9,6 +9,8 @@ import (
 	"github.com/urfave/cli/v2"
 )
 
+// Publish
+// nix publish
 // git tag v1.0.0
 // git push --tags
 var Publish = &cli.Command{

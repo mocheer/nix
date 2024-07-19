@@ -1,7 +1,9 @@
 {
   "scripts":{
     "build":"go build -ldflags \"-s -w\"",
+    "build-linux": "$env:GOOS=\"linux\";$env:GOARCH=\"amd64\";$env:CGO_ENABLED=\"0\";go build -ldflags \"-s -w\" .",
     "upx":"nix upx -9 nix.exe",
     "build-upx":"nix build;nix run upx"
+    
   }
 }

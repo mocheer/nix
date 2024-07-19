@@ -40,6 +40,7 @@ func main() {
 			cmds.FBX2glTF,
 			cmds.IP,
 			cmds.Basis,
+			cmds.Rename,
 		},
 	}
 	//
