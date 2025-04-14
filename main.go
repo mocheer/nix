@@ -41,6 +41,7 @@ func main() {
 			cmds.IP,
 			cmds.Basis,
 			cmds.Rename,
+			cmds.FFmpeg,
 		},
 	}
 	//

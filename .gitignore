@@ -22,3 +22,7 @@ id_rsa.pub
 # 
 go.work
 go.work.sum
+# ffmpeg
+tests/ffmpeg/input.mp4
+tests/ffmpeg/output
+tests/ffmpeg/output.mp4
