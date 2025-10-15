@@ -42,6 +42,7 @@ func main() {
 			cmds.Basis,
 			cmds.Rename,
 			cmds.FFmpeg,
+			cmds.ArcgisQuery,
 		},
 	}
 	//
