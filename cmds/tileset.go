@@ -15,6 +15,9 @@ import (
 // nix tileset https://tile.googleapis.com/v1/3dtiles/root.json?key=AIzaSyCnRPXWDIj1LuX6OWIweIqZFHHoXVgdYss googlephotorealistic3dtileset
 // nix tileset http://data1.mars3d.cn/3dtiles/qx-hfdxy/tileset.json mars3d_video3d
 // nix tileset http://112.81.89.197:9900/data/3dtiles/tileset.json data/3dtiles-20240708143021
+// 以下是变种，龙文区九十九湾
+// nix tileset http://172.16.2.52/models-rest/rest/models/preview/LW99DG1/tileset.json data/lwq99w1
+// nix tileset http://172.16.2.52/models-rest/rest/models/preview/LW99DS2/tileset.json data/lwq99w2
 var Tileset = &cli.Command{
 	Name:  "tileset",
 	Usage: "下载在线3dtiles模型数据",
