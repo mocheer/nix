@@ -7,7 +7,6 @@ require (
 	github.com/go-git/go-git/v5 v5.14.0
 	github.com/mfbonfigli/gocesiumtiler/v2 v2.0.0-beta
 	github.com/mocheer/pluto v0.0.0-20260204110653-70886c52c61a
-	github.com/mocheer/xena v0.0.0-20250417063823-ecefda2ced08
 	github.com/urfave/cli/v2 v2.27.2
 	gorm.io/driver/postgres v1.6.0
 	gorm.io/gorm v1.31.1
@@ -45,6 +44,7 @@ require (
 	github.com/kennygrant/sanitize v1.2.4 // indirect
 	github.com/kevinburke/ssh_config v1.2.0 // indirect
 	github.com/matoous/go-nanoid/v2 v2.1.0 // indirect
+	github.com/mocheer/xena v0.0.0-20260306034646-f773f993de30 // indirect
 	github.com/pjbgf/sha1cd v0.3.2 // indirect
 	github.com/qmuntal/gltf v0.26.0 // indirect
 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
