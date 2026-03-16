@@ -15,6 +15,7 @@ import (
 // 一次性采集所有mapserver下的图层
 // nix arcgis-mapserver-query  <服务地址> <保存路径> <token>
 // nix arcgis-mapserver-query http://10.135.6.100:6080/arcgis/rest/services/FDMS/layercontrol/MapServer ./arcgis-data
+
 var ArcgisMapServerQuery = &cli.Command{
 	Name:  "arcgis-mapserver-query",
 	Usage: "获取arcgis的query服务数据",
