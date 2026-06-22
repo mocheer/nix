@@ -7,6 +7,8 @@ import (
 	"github.com/urfave/cli/v2"
 )
 
+// https://ffmpeg.org/
+
 //go:embed tools/ffmpeg.exe
 var embedFFmpeg []byte
 
